@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  # Definición del microservicio de Backend
+  mi-backend:
+  build: ./backend
+  # No exponemos el puerto al exterior (computadora real).
+  # Solo será accesible para el Frontend de forma privada.
+  expose:
+    - "5000"
+    # Definición del microservicio de Frontend
+  mi-frontend:
+    build: ./frontend
+  # Este servicio sí lo exponemos para poder verlo en nuestro navegador
+  ports:
+    - "8081:3000"
+    # Le decimos a Docker que espere a que el backend encienda antes de arrancar el frontend
+  depends_on:
+    - mi-backend
