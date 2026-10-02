@@ -14,8 +14,10 @@ app.get('/', async (req, res) => {
             <p>Hemos consultado al servicio de Backend de manera aislada y nos respondió:</p>
             <blockquote style="background: #f0f0f0; padding: 15px; border-left: 5px solid #007bff;">
                 <b>${datos.mensaje}</b>
-                <br>
-                <small>Origen: ${datos.servidor}</small>
+<br>
+<small>Origen: ${datos.servidor}</small>
+<br>
+<strong>Estudiante: ${datos.nombres}</strong>
             </blockquote>
         `);
     } catch (error) {
